@@ -1,0 +1,39 @@
+#include <iostream>
+#include <windows.h>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+
+{
+
+	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	
+	fstream file;
+	string s;
+	file.open("C:\\.vs\\Файлы\\1.txt");
+	if (file)
+	{
+		while ( !file.eof() )
+		{
+			getline(file, s, '\0');
+			for (int i = s.find(32) + 1; i <= s.size(); i++)
+
+				file << s[i];
+		}
+		file.close();
+		file.open("C:\\.vs\\Файлы\\1.txt", ios::out);
+		for (int i = s.find(32) + 1; i <= s.size(); i++)
+			file << s[i];
+		file.close();
+		cout << "vupolneno";
+	}
+	else
+		cout << "ne otkrut";
+
+	return 0;
+}
