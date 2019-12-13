@@ -1,0 +1,49 @@
+#include <iostream>
+#include <windows.h>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+
+{
+
+	setlocale(LC_ALL, "Russian");
+
+	SetConsoleCP(1251);
+
+	SetConsoleOutputCP(1251);
+
+	fstream file;
+
+	string S, w;
+
+	int N, K;
+
+	cout << "imy faila=  ";
+	getline(cin, w);
+
+	cout << "N=";
+	cin >> N;
+	cout << "K=";
+	cin >> K;
+	file.open(w, ios::out);
+	if (file)
+	{
+		for (int i = 0; i < N; i++)
+		{
+			for (int j = 0; j < K; j++)
+			{
+				file << '*';
+			}
+			file << "\n";
+		}
+		file.close();
+		cout << "vupolneno";
+	}
+	else
+		{cout << "ne otkrut";}
+
+	return 0;
+}
