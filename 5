@@ -1,0 +1,35 @@
+#include <iostream>
+#include <windows.h>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+
+{
+	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+
+	fstream f;
+	string S;
+	int k , i;
+	f.open("C:\\.vs\\Файлы\\5.txt");
+	if (f) {
+		getline(f, S, '\0');
+		k = 0;
+		for (int i = 4; i < S.size(); i++)
+		{
+			if (S[i - 4] == ' ' && S[i - 3] == ' ' && S[i - 2] == ' ' && S[i - 1] == ' ' && S[i] == ' ')
+			{
+				k++;
+			}
+		}
+	}
+
+	else { cout << "ne otkrut"; }
+	cout << "kollichestvo = " << k;
+
+	return 0;
+}
