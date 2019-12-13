@@ -1,0 +1,32 @@
+#include <iostream>
+#include <windows.h>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+int main()
+
+{
+	setlocale(LC_ALL, "Russian");
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	fstream file1, file2;
+
+	string S, N;
+
+	f1.open("C:\\.vs\\Файлы\\31.txt");
+	f2.open("C:\\.vs\\Файлы\\32.txt");
+
+	if (f1 && f2) 
+	{
+		getline(f1, S);
+		getline(f2, N);
+		f1.seekg(ios_base::beg);
+		f1 << N << S;
+		}
+
+	else { cout << "ne otkrut" << endl; }
+
+	return 0;
+}
