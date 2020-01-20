@@ -15,17 +15,17 @@ int main()
 
 	string S, N;
 
-	f1.open("C:\\.vs\\Файлы\\31.txt");
-	f2.open("C:\\.vs\\Файлы\\32.txt");
+	file1.open("C:\\Users\\Lenovo\\source\\repos\\31.txt");
+	file2.open("C:\\Users\\Lenovo\\source\\repos\\32.txt");
 
-	if (f1 && f2) 
+
+	if (file1 && file2)
 	{
-		getline(f1, S);
-		getline(f2, N);
-		f1.seekg(ios_base::beg);
-		f1 << N << S;
-		}
-
+		getline(file1, S);
+		getline(file2, N);
+		file1.seekg(ios_base::beg);
+		file1 << N << S;
+	}
 	else { cout << "ne otkrut" << endl; }
 
 	return 0;
