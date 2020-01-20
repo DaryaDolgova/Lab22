@@ -15,19 +15,19 @@ int main()
 	fstream f;
 	string S;
 	char c(32);
-	int i,j
+	int i, j;
 
-	f.open("C:\\.vs\\Файлы\\4.txt");
+		f.open("C:\\Users\\Lenovo\\source\\repos\\31.txt");
 
 	if (f) {
 		getline(f, S, '\0');
 		for (i = 0; i < S.size(); i++)
-			if (S[i] == c && S[i] == S[i + 1] )
+			if (S[i] == c && S[i] == S[i + 1])
 				for (j = i; j < S.size(); j++)
 					S[j] = S[j + 1];
 		f << S;
 		f.close();
-		f.open("C:\\.vs\\Файлы\\4.txt", ios::out);
+		f.open("C:\\Users\\Lenovo\\source\\repos\\31.txt", ios::out);
 		for (i = 0; i < S.size(); i++)
 			if (S[i] == c && S[i] == S[i + 1])
 				for (j = i; j < S.size(); j++)
